@@ -1,0 +1,33 @@
+.bar-chart {
+    min-height: 200px;
+    max-height: 700px;
+    width: 900px;
+    display: flex;
+    align-items: flex-end;
+    gap: 2rem;
+    justify-content: center;
+}
+.bar-container{
+    display: flex;
+    flex-direction:column ;
+    align-items: center;
+    position: relative;
+    span {
+        text-transform: uppercase;
+        position: absolute;
+        top: .3rem;
+    }
+    .type {
+        box-shadow: 3px 4px 10px 1px rgba(133, 165, 177, 0.5);
+        width: 6rem;
+        background-color: lightblue;
+        text-transform: uppercase;
+        justify-content: center;
+        padding-top: .8rem;
+        color: white;
+        &.introvert {
+            background-color: pink;
+            box-shadow: 3px 4px 10px 1px rgb(186, 139, 147, 0.5);
+        }
+    }
+}

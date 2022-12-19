@@ -1,0 +1,24 @@
+@import '../styles/styles.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    @extend .title
+}
+
+.main-content {
+    width: 43.75rem;
+    button {
+        @extend .btn
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

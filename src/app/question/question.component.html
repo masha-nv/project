@@ -1,0 +1,14 @@
+<div class="question-container" *ngIf="currentQuestion$ | async as currentQuestion">
+    <span class="list-title">{{currentQuestion.question}}</span>
+    <mat-selection-list #options [multiple]="false">
+        <mat-list-option [selected]="isRestarted ? false : opt === currentQuestion.selectedOption" #matListOption *ngFor="let opt of currentQuestion.options; index as i" [value]="opt">
+          {{opt}}
+        </mat-list-option>
+      </mat-selection-list>
+
+      <div class="action-buttons">
+          <button (click)="getPreviousQuestion()" *ngIf="chatService.currentQuestionNumber > 0"  class="btn">Previous</button>
+          <button (click)="getNextQuestion()" class="btn" *ngIf="!currentQuestion.isLast" [disabled]="!options.selectedOptions.hasValue()">Next</button>
+          <button (click)="handleSubmit()" class="btn" *ngIf="currentQuestion.isLast">Submit</button>
+      </div>
+</div>

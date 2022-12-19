@@ -1,0 +1,3 @@
+<div class="progress-container" *ngIf="questionsStatuses$ | async as statuses">
+    <div class="status-cell" *ngFor="let status of statuses" [ngStyle]="{backgroundColor: status ? 'lightgreen' : ''}"></div>
+</div>

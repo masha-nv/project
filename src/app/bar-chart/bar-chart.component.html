@@ -1,0 +1,12 @@
+<div class="bar-chart" *ngIf="results$ | async as results">
+    <ng-container *ngIf="results.total">
+        <div class="bar-container">
+            <span>introvert</span>
+            <div [matTooltip]="results.introvert | percentPipe: results.total" matTooltipPosition="above" class="type introvert" [style.height.px]="results.introvert*30"></div>
+        </div>
+        <div class="bar-container">
+            <span>extravert</span>
+            <div [matTooltip]="results.extravert | percentPipe: results.total" matTooltipPosition="above" class="type extravert" [style.height.px]="results.extravert*30"></div>
+        </div>
+    </ng-container>
+</div>
